@@ -1,0 +1,23 @@
+[project]
+name = "miniclaudecode"
+version = "0.1.0"
+description = "Lightweight coding agent CLI — hand-rolled agent loop, layered permissions, cache-aware context, trajectory replay"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.40",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.34"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+miniclaude = "miniclaude.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["miniclaude*"]
